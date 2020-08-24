@@ -1,0 +1,140 @@
+transsys Transsys_Model33
+// topology: random_uniform
+// n: 6
+// num_edges: 20
+// topology: end
+// constitutive: 0.1
+// km_activation: 0.2
+// km_repression: 0.3
+// vmax_activation: 1.4
+// vmax_repression: 1.5
+// decay: 0.1
+// diffusibility: 0.1
+// rndseed: 1
+// 
+// serial #33
+{
+  factor NAM_A1
+  {
+    decay: 0.1;
+    diffusibility: 0.1;
+    synthesis: 0.0;
+  }
+
+  factor NAM_A2
+  {
+    decay: 0.1;
+    diffusibility: 0.1;
+    synthesis: 0.0;
+  }
+
+  factor NAM_D1
+  {
+    decay: 0.1;
+    diffusibility: 0.1;
+    synthesis: 0.0;
+  }
+
+  factor NAM_D2
+  {
+    decay: 0.1;
+    diffusibility: 0.1;
+    synthesis: 0.0;
+  }
+
+  factor NAM_B2
+  {
+    decay: 0.1;
+    diffusibility: 0.1;
+    synthesis: 0.0;
+  }
+
+  factor VRN_B3
+  {
+    decay: 0.1;
+    diffusibility: 0.1;
+    synthesis: 0.0;
+  }
+
+  gene NAM_A1_gene
+  {
+    promoter
+    {
+      constitutive: 0.1;
+      VRN_B3: repress(0.2, 1.4);
+    }
+    product
+    {
+      default: NAM_A1;
+    }
+  }
+
+  gene NAM_A2_gene
+  {
+    promoter
+    {
+      constitutive: 0.1;
+      VRN_B3: repress(0.2, 1.4);
+    }
+    product
+    {
+      default: NAM_A2;
+    }
+  }
+
+  gene NAM_D1_gene
+  {
+    promoter
+    {
+      constitutive: 0.1;
+      VRN_B3: repress(0.2, 1.4);
+    }
+    product
+    {
+      default: NAM_D1;
+    }
+  }
+
+  gene NAM_D2_gene
+  {
+    promoter
+    {
+      constitutive: 0.1;
+      VRN_B3: repress(0.2, 1.4);
+    }
+    product
+    {
+      default: NAM_D2;
+    }
+  }
+
+  gene NAM_B2_gene
+  {
+    promoter
+    {
+      constitutive: 0.1;
+      VRN_B3: repress(0.2, 1.4);
+    }
+    product
+    {
+      default: NAM_B2;
+    }
+  }
+
+  gene VRN_B3_gene
+  {
+    promoter
+    {
+      constitutive: 0.1;
+      NAM_A1: activate(0.2, 1.4);
+      NAM_A2: activate(0.2, 1.4);
+      NAM_D1: activate(0.2, 1.4);
+      NAM_D2: activate(0.2, 1.4);
+      NAM_B2: activate(0.2, 1.4);
+    }
+    product
+    {
+      default: VRN_B3;
+    }
+  }
+}

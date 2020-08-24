@@ -1,0 +1,33 @@
+TranssysTypedParameterTransformer-1.1
+decayTransformation
+ArctanFunction
+minValue: 0.1
+maxValue: 5
+diffusibilityTransformation
+ArctanFunction
+minValue: 0.1
+maxValue: 5
+synthesisTransformation
+ArctanFunction
+minValue: 0.1
+maxValue: 5
+constitutiveTransformation
+ArctanFunction
+minValue: 0.1
+maxValue: 5
+aspecTransformation
+ArctanFunction
+minValue: 0.1
+maxValue: 5
+amaxTransformation
+ArctanFunction
+minValue: 0.1
+maxValue: 5
+rspecTransformation
+ArctanFunction
+minValue: 0.1
+maxValue: 5
+rmaxTransformation
+ArctanFunction
+minValue: 0.1
+maxValue: 5

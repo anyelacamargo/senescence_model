@@ -1,0 +1,13 @@
+GradientOptimiser-0.1.1
+initial_stepsize: 0.1
+delta: 0.1
+stepsize_shrink: 0.5
+termination_stepsize: None
+termination_objective: None
+termination_iteration: None
+termination_numEvaluations: None
+termination_improvement: None
+termination_relative_improvement: 0.001
+stepsize_max: 0.01
+eliminateFlatComponents: False
+ParameterTransformer

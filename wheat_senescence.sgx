@@ -1,0 +1,157 @@
+SimGenex-2.0
+
+procedure equilibration
+{
+ runtimesteps: 100;
+} 
+
+procedure wildtype
+{
+ runtimesteps: 1;
+}
+
+procedure treatmenttime
+{
+ runtimesteps: 10;
+}
+
+procedure treatmenttime_t2
+{
+ treatmenttime;
+ treatmenttime;
+}
+
+procedure treatmenttime_t3
+{
+ treatmenttime;
+ treatmenttime;
+ treatmenttime;
+}
+
+procedure treatmenttime_t4
+{
+ treatmenttime;
+ treatmenttime;
+ treatmenttime;
+ treatmenttime;
+}
+
+procedure treatmenttime_t5
+{
+ treatmenttime;
+ treatmenttime;
+ treatmenttime;
+ treatmenttime;
+ treatmenttime;
+}
+
+procedure treatmenttime_t6
+{
+ treatmenttime;
+ treatmenttime;
+ treatmenttime;
+ treatmenttime;
+ treatmenttime;
+ treatmenttime;
+}
+
+procedure treatmenttime_t7
+{
+ treatmenttime;
+ treatmenttime;
+ treatmenttime;
+ treatmenttime;
+ treatmenttime;
+ treatmenttime;
+ treatmenttime;
+}
+
+procedure treatmenttime_t8
+{
+ treatmenttime;
+ treatmenttime;
+ treatmenttime;
+ treatmenttime;
+ treatmenttime;
+ treatmenttime;
+ treatmenttime;
+ treatmenttime;
+}
+
+procedure treatmenttime_t9
+{
+ treatmenttime;
+ treatmenttime;
+ treatmenttime;
+ treatmenttime;
+ treatmenttime;
+ treatmenttime;
+ treatmenttime;
+ treatmenttime;
+ treatmenttime;
+}
+
+procedure treatmenttime_t10
+{
+ treatmenttime;
+ treatmenttime;
+ treatmenttime;
+ treatmenttime;
+ treatmenttime;
+ treatmenttime;
+ treatmenttime;
+ treatmenttime;
+ treatmenttime;
+ treatmenttime;
+}
+
+simexpression all
+{
+ foreach: wildtype;
+ equilibration;
+ foreach: treatmenttime treatmenttime_t2 treatmenttime_t3 treatmenttime_t4 treatmenttime_t5 treatmenttime_t6 treatmenttime_t7 treatmenttime_t8 treatmenttime_t9 treatmenttime_t10;
+}
+
+measurementmatrix
+{
+ measurementprocess
+ {
+   offset: 0.0;
+   transformation: (x1/x2) * x2;
+ }
+
+ measurementcolumns
+ {
+   GS0: x1 = all_wildtype_treatmenttime, x2 = all_wildtype_treatmenttime;
+   GS10: x1 = all_wildtype_treatmenttime_t2, x2 = all_wildtype_treatmenttime_t2;
+   GS20: x1 = all_wildtype_treatmenttime_t3, x2 = all_wildtype_treatmenttime_t3;
+   GS30: x1 = all_wildtype_treatmenttime_t4, x2 = all_wildtype_treatmenttime_t4;
+   GS40: x1 = all_wildtype_treatmenttime_t5, x2 = all_wildtype_treatmenttime_t5;
+   GS50: x1 = all_wildtype_treatmenttime_t6, x2 = all_wildtype_treatmenttime_t6;
+   GS60: x1 = all_wildtype_treatmenttime_t7, x2 = all_wildtype_treatmenttime_t7;
+   GS70: x1 = all_wildtype_treatmenttime_t8, x2 = all_wildtype_treatmenttime_t8;
+   GS80: x1 = all_wildtype_treatmenttime_t9, x2 = all_wildtype_treatmenttime_t9;
+   GS90: x1 = all_wildtype_treatmenttime_t10, x2 = all_wildtype_treatmenttime_t10;
+ }
+
+ genemapping
+ {
+   NAM_A1: "NAM_A1";
+   NAM_A2: "NAM_A2";
+   NAM_D1: "NAM_D1";
+   NAM_D2: "NAM_D2";
+   NAM_B2: "NAM_B2";
+   VRN_B3: "VRN_B3";
+ }
+}
+ 
+discriminationsettings
+{
+ distance: correlation;
+
+ whitelistdefs
+ {
+   factor: NAM_A1 NAM_A2 NAM_D1 NAM_D2 NAM_B2 VRN_B3;
+   gene: NAM_A1_gene NAM_A2_gene NAM_D1_gene NAM_D2_gene NAM_B2_gene VRN_B3_gene;
+ }
+}
